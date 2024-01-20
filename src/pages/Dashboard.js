@@ -1,4 +1,3 @@
-// DashboardPage.js
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Common/Header';
 import axios from 'axios';
@@ -16,6 +15,7 @@ function DashboardPage() {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [watchlist, setWatchlist] = useState(JSON.parse(localStorage.getItem('watchlist')) || []);
+  const [isLightTheme, setIsLightTheme] = useState(localStorage.getItem('theme') === 'light');
 
   const handlePageChange = (event, value) => {
     setPage(value);
@@ -40,7 +40,12 @@ function DashboardPage() {
     setWatchlist(updatedWatchlist);
     localStorage.setItem('watchlist', JSON.stringify(updatedWatchlist));
   };
-  
+
+  const handleThemeToggle = () => {
+    const newTheme = !isLightTheme;
+    setIsLightTheme(newTheme);
+    localStorage.setItem('theme', newTheme ? 'light' : 'dark');
+  };
 
   useEffect(() => {
     getData();
@@ -57,14 +62,14 @@ function DashboardPage() {
 
   return (
     <>
-      <Header />
+      <Header onThemeToggle={handleThemeToggle} isLightTheme={isLightTheme} />
       <BackToTop />
       {isLoading ? (
         <Loader />
       ) : (
         <div>
           <Search search={search} onSearchChange={onSearchChange} />
-          <TabsComponent coins={search ? coins.filter((item) => item.name.toLowerCase().includes(search.toLowerCase())) : paginatedCoins} onToggleWatchlist={onToggleWatchlist} />
+          <TabsComponent coins={search ? coins.filter((item) => item.name.toLowerCase().includes(search.toLowerCase())) : paginatedCoins} onToggleWatchlist={onToggleWatchlist} isLightTheme={isLightTheme} />
           {!search && <PaginationComponent page={page} handlePageChange={handlePageChange} />}
         </div>
       )}

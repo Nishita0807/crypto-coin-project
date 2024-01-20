@@ -8,14 +8,14 @@ import Grid from '../Grid';
 import "./styles.css";
 import List from '../List';
 
-export default function TabsComponent({ coins, onToggleWatchlist }) {
+export default function TabsComponent({ coins, onToggleWatchlist, isLightTheme}) {
   const [value, setValue] = useState('grid');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 const style={
-    color:"var(--white)",
+  color: isLightTheme ? "var(--black)" : "var(--white)",
     width:"50vw",
     fontSize:"1.2rem",
     fontWeight:600,

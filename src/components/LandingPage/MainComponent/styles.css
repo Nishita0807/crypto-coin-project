@@ -10,16 +10,29 @@
     margin: 0;
 }
 
-.track-crypto-heading{
-    color:var(--white);
+.track-crypto-heading {
+    color: var(--white);
     -webkit-text-stroke-color: var(--white);
     -webkit-text-stroke-width: 3px;
 }
-.track-crypto-heading:hover{
+
+.light-theme .track-crypto-heading {
+    color: var(--black);
+    -webkit-text-stroke-color: var(--white);
+}
+
+.track-crypto-heading:hover {
     color: var(--black);
     -webkit-text-stroke-color: var(--white);
     transition: all 0.3s;
 }
+
+.light-theme .track-crypto-heading:hover {
+    color: var(--black);
+    -webkit-text-stroke-color: var(--white);
+    transition: all 0.3s;
+}
+
 .real-time-heading{
     color: var(--blue);
 }

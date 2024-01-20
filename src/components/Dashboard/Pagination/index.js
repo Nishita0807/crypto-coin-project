@@ -8,7 +8,7 @@ export default function PaginationComponent({page,handlePageChange}) {
 
   return (
     <div className="pagination" spacing={2}>
-      <Typography>Page: {page}</Typography>
+      
       <Pagination count={10} page={page} onChange={(e,v)=>handlePageChange(e,v)} 
       sx={{
         color:"var(--white)",

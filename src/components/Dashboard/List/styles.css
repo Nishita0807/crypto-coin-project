@@ -56,5 +56,36 @@
     .mobile-td-mkt{
         display: block;
     }
-   
+
+    
+    .td-image{
+        width:1rem !important;
+        
+    }
+ 
+    .list-row td{
+        width: 6%;
+        text-align:left;
+        font-size: 0.5rem !important;
+    }
+
+    .list-row{
+        font-size: 0.5rem !important;
+gap:1.2rem !important;
+    }
+    .grid-watchlist{
+        padding: 0rem !important;
+        margin-left: 1.5rem;
+    }
+    .total_volume{
+        font-size: 0.8rem !important;
+    }
+    .price-chip{
+        padding: 0rem !important;
+        font-size: 0.8rem !important;
+        
+    }
+    .coin-price{
+        margin-left: 0.5rem;
+    }
  }

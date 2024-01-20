@@ -11,12 +11,16 @@
 
 }
 
-body{
+body {
+  margin: 0;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+}
 
-    margin:0;
-    background-color:var(--black);
-    color:var(--white);
-    font-family: 'Inter', sans-serif;
+body.light-theme {
+  background-color: var(--white);
+  color: var(--black);
 }
 
 
@@ -77,4 +81,13 @@ html{
   align-items: center;
   margin: 1.5rem;
   gap:2rem;
+}
+
+
+@media only screen and (max-width:800px){
+  .coin-days-flex{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
