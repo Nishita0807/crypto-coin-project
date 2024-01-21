@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Pagination from '@mui/material/Pagination';
 import "./styles.css";
-export default function PaginationComponent({page,handlePageChange}) {
+export default function PaginationComponent({page,handlePageChange,isLightTheme}) {
   
 
   return (
@@ -22,8 +22,8 @@ export default function PaginationComponent({page,handlePageChange}) {
         },
 
         "& .MuiPaginationItem-text":{
-            color:"var(--white)",
-            border:"1px solid var(--grey",
+            color:isLightTheme ? "var(--black)":"var(--white)",
+            border:"1px solid var(--grey)",
 
         }
 

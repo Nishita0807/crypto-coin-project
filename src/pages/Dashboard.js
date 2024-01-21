@@ -70,7 +70,7 @@ function DashboardPage() {
         <div>
           <Search search={search} onSearchChange={onSearchChange} />
           <TabsComponent coins={search ? coins.filter((item) => item.name.toLowerCase().includes(search.toLowerCase())) : paginatedCoins} onToggleWatchlist={onToggleWatchlist} isLightTheme={isLightTheme} />
-          {!search && <PaginationComponent page={page} handlePageChange={handlePageChange} />}
+          {!search && <PaginationComponent page={page} handlePageChange={handlePageChange} isLightTheme={isLightTheme}/>}
         </div>
       )}
     </>
